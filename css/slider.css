@@ -1,0 +1,59 @@
+#slider
+{
+    height: 630px;
+}
+
+#slider::before
+{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+
+    background: linear-gradient(118deg, rgba(0,0,0,.3) 0%, var(--white) 50%, rgba(0,0,0,.3) 100%);
+    filter: blur(300px);
+}
+
+#slider .wrapper
+{
+    background: var(--white);
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    outline: 5px solid var(--light);
+}
+
+#slider ul
+{
+    display: block;
+    width: 100%;
+    height: 630px;
+    overflow: hidden;   
+}
+
+#slider li
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#slider picture
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#slider picture img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

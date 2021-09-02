@@ -1,3 +1,8 @@
+#spacer
+{
+    height: 100px;
+}
+
 #header
 {
     color: var(--white);
@@ -10,6 +15,8 @@
     left: 0;
     width: 100%;
     z-index: 2; 
+
+    box-shadow: 0 5px 5px rgba(0,0,0,.3);
 }
 
 @media(max-width:1240px)
@@ -48,7 +55,7 @@
 #nav ul
 {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100%;
 }
@@ -63,7 +70,7 @@
 
 #nav li
 {
-    width: 25%;
+    /* width: 25%; */
     display: block;
     text-align: center;
 }
