@@ -12,17 +12,13 @@
     z-index: 2; 
 }
 
-/* #header.active::before
+@media(max-width:1240px)
 {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 3;
-} */
+    #header
+    {
+        padding: 5px 0;
+    }
+}
 
 #header .wrapper
 {

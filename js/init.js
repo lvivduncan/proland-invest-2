@@ -6,9 +6,6 @@ const body = document.getElementsByTagName('body')[0];
 const cover = document.createElement('div');
 cover.setAttribute('id', 'cover');
 
-// add additional wrapper for click to cover
-const header = document.getElementById('header');
-
 // phone icon from nav
 const phone = document.getElementById('phone');
 
@@ -17,9 +14,6 @@ const phoneUl = phone.getElementsByTagName('ul')[0];
 
 // check resize
 let flag = false;
-
-    // // check click phone or menu (test)
-    // let click = false;
 
 // check phone click
 let clickPhone = false;
@@ -111,7 +105,7 @@ menu.addEventListener('click', () => {
 
 document.addEventListener('click', e => {
 
-    if(e.target.id === 'cover' || e.target.id === 'header'){
+    if(e.target.id === 'cover'){
 
         closeAll();
     }
