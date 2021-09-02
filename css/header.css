@@ -80,6 +80,11 @@
     transition: .5s;
 }
 
+#nav svg
+{
+    display: none;
+}
+
 #nav a:hover
 {
     color: var(--gray);
@@ -103,12 +108,12 @@
 /* mobile menu */
 #nav ul.active
 {
-    width: 256px;
-    height: 152px;
+    width: 200px;
+    height: 210px;
 
     position: fixed;
-    top: calc(50% - 76px);
-    left: calc(50% - 128px);
+    top: calc(50% - 105px);
+    left: calc(50% - 100px);
     display: block;
     z-index: 6;
 }
@@ -117,14 +122,27 @@
 {
     width: auto;
     margin: 0 0 10px;
+    text-align: left;
 }
 
 #nav ul.active a
 {
+    /* display: inline-flex; */
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    align-items: center;
+    padding: 5px 0;
+    color: var(--light);
+    grid-gap: 10px;
+    font-weight: normal;
+}
+
+#nav ul.active svg
+{
     display: block;
-    padding: 10px;
-    background: var(--light);
-    color: var(--black);
+    width: 32px;
+    height: 32px;
+    fill: var(--light);
 }
 
 #phone
