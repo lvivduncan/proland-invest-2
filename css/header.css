@@ -14,9 +14,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 2; 
+    z-index: 12; 
 
-    box-shadow: 0 5px 5px rgba(0,0,0,.3);
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
 }
 
 @media(max-width:1240px)
@@ -118,7 +118,7 @@
     top: calc(50% - 105px);
     left: calc(50% - 100px);
     display: block;
-    z-index: 6;
+    z-index: 13;
 }
 
 #nav ul.active li
@@ -173,7 +173,7 @@
 {    
     display: block;
     position: fixed;
-    z-index: 6;
+    z-index: 13;
     top: calc(50% - 100px); /* 208 */
     left: calc(50% - 100px); /* 207 */
 }

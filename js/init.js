@@ -156,7 +156,66 @@
 
 // slider
 {
-    
+    const slider = document.getElementById('slider');
+
+    // slides includes img and title
+    const slides = slider.querySelectorAll('article');
+
+    // quantity
+    const length = slides.length;
+
+    let counter = 0;
+
+    // get interval id
+    let interval;
+
+    startSlides();
+
+    for(let i = 0; i < length; i++){
+
+        slides[i].addEventListener('mouseover', stopSlides);
+        slides[i].addEventListener('mouseout', startSlides);
+    }
+   
+    function startSlides(){
+
+        interval = setInterval(() => {
+
+            if(counter !== length-1){
+
+                counter++;
+                
+                for(let i = 0; i < length; i++){
+        
+                    for(let k = 0; k < length; k++){
+                        slides[k].className = '';
+                    }
+        
+                }
+                slides[counter].className = 'active';
+
+            } else {
+
+                counter = 0;
+                
+                for(let i = 0; i < length; i++){
+        
+                    for(let k = 0; k < length; k++){
+                        slides[k].className = '';
+                    }
+        
+                }
+                slides[counter].className = 'active';
+
+            }
+        }, 6000);
+    }
+
+    function stopSlides(){
+
+        clearInterval(interval);
+    }
+
 }
 
-// 2-09-2021
+// 3-09-2021
