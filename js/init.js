@@ -169,6 +169,9 @@
     // get interval id
     let interval;
 
+    // speed animation
+    let speed = 6000;
+
     startSlides();
 
     for(let i = 0; i < length; i++){
@@ -208,12 +211,13 @@
                 slides[counter].className = 'active';
 
             }
-        }, 6000);
+        }, speed);
     }
 
     function stopSlides(){
 
         clearInterval(interval);
+        // speed = 2000;
     }
 
 }

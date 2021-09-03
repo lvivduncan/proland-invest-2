@@ -16,6 +16,9 @@
     --gray-dark: #818181;
     --dark: #17192b;
     --black: #000;
+
+    /* --opacity50: rgba(0,0,0,.5); */
+    /* --transparent50: rgba(255,255,255,.5); */
 }
 
 html,
