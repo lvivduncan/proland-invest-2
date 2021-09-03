@@ -1,5 +1,23 @@
 // 1-09-2021
 
+// small header
+{
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+
+        console.log(window.pageYOffset)
+
+        if(window.pageYOffset > 50){
+
+            header.className = 'scroll';
+        } else {
+
+            header.className = '';
+        }
+    });
+}
+
 // menu and phones
 {
     const body = document.getElementsByTagName('body')[0];
