@@ -270,7 +270,7 @@
 
         // hide
         left.classList.remove('active');
-        right.classList.remove('active');        
+        right.classList.remove('active');
     });
 
     for(let i = 0, length = slides.length; i < length; i++){
