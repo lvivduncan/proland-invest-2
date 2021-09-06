@@ -240,4 +240,181 @@
 
 }
 
-// 3-09-2021
+// swipe slider
+{
+    const hotSlider = document.querySelector('#hot-slider');
+    const slides = hotSlider.querySelectorAll('article');
+    const length = slides.length;
+    const left = hotSlider.querySelector('.left');
+    const right = hotSlider.querySelector('.right');
+
+    // arrows
+    hotSlider.addEventListener('mouseover', () => {
+
+        // show
+        left.classList.add('active');
+        right.classList.add('active');
+    });
+
+    // arrows
+    hotSlider.addEventListener('mouseout', () => {
+
+        // hide
+        left.classList.remove('active');
+        right.classList.remove('active');        
+    });
+
+    for(let i = 0; i < length; i++){
+
+        // check drag
+        let drag = false;
+
+        // start drag pointer
+        let start = 0;
+
+        // finish drag pointer
+        let finish = 0;
+
+        // check shift
+        let shift = 0;
+
+        // check shift
+        let flag = false;
+
+        // create array shift translateX
+        const translate = [];
+
+        // fill array items
+        for(let k = 0; k < slides.length; k++){
+            translate.push(k * 100 - 100);
+        }
+
+        render();
+
+        events();
+
+        // to left
+        left.addEventListener('click', () => {
+
+            const first = translate.pop();
+            translate.unshift(first);
+
+            render();
+        });
+    
+        // to right
+        right.addEventListener('click', () => {
+    
+            const last = translate.shift();
+            translate.push(last);
+
+            render();
+        });
+
+        function scrollStart(event){
+
+            drag = true;
+    
+            this.classList.add('grabbing');
+    
+            // where they clicked
+            start = event.pageX || event.touches[0].clientX;
+        }
+    
+        function scrollMove(event){
+    
+            if(drag){
+    
+                // where they dragged
+                finish = event.pageX || event.touches[0].clientX;
+    
+                // if to left
+                if(finish - start < 0){
+    
+                    shift = finish - start;
+    
+                    if(flag === false){
+    
+                        flag = true;
+                    }
+                } 
+                
+                // if to right
+                if(finish - start > 0) { 
+    
+                    shift = Math.abs(start - finish);
+    
+                    if(flag === false){
+    
+                        flag = true;
+                    }
+                }
+    
+                this.style.transform = `translateX(${shift}px)`;
+            }
+        }
+    
+        function scrollEnd(){
+    
+            // to right
+            if(finish - start < 0){
+                
+                const first = translate.pop();
+                translate.unshift(first);
+            } 
+    
+            // to left
+            if(finish - start > 0) {
+                
+                const last = translate.shift();
+                translate.push(last);
+            }
+    
+            render();
+    
+            // set null
+            drag = false;
+    
+            // set null
+            flag = false;
+    
+            this.classList.remove('grabbing');
+        }
+        
+        function render(){
+            for(let i = 0; i < slides.length; i++){
+    
+                if(translate[i] === 0){
+                    slides[i].style.opacity = 1;
+                } else{
+                    slides[i].style.opacity = 0;
+                }
+                
+                slides[i].style.transform = `translateX(${translate[i]}%)`;
+            }
+        }
+    
+        function events(){
+            for(let i = 0; i < slides.length; i++){
+                slides[i].querySelector('img').addEventListener('dragstart', event => event.preventDefault());
+    
+                // touch
+                slides[i].addEventListener('touchstart', scrollStart, false);
+                slides[i].addEventListener('touchmove', scrollMove, false);
+                slides[i].addEventListener('touchend', scrollEnd, false);
+    
+                // click
+                slides[i].addEventListener('mousedown', scrollStart, false);
+                slides[i].addEventListener('mousemove', scrollMove, false);
+                slides[i].addEventListener('mouseup', scrollEnd, false);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+// 6-09-2021
