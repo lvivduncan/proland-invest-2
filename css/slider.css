@@ -32,8 +32,9 @@
     width: 100%;
     height: 630px;
     overflow: hidden;
-    position: relative;
     background: var(--black);
+    position: relative;
+    z-index: 1;
 }
 
 @media(max-width:776px)

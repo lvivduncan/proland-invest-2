@@ -244,9 +244,18 @@
 {
     const hotSlider = document.querySelector('#hot-slider');
     const slides = hotSlider.querySelectorAll('article');
-    const length = slides.length;
-    const left = hotSlider.querySelector('.left');
-    const right = hotSlider.querySelector('.right');
+
+    const left = document.createElement('div');
+    left.className = 'left';
+
+    // left arrow
+    hotSlider.append(left);
+
+    const right = document.createElement('div');
+    right.className = 'right';
+
+    // right arrow
+    hotSlider.append(right);
 
     // arrows
     hotSlider.addEventListener('mouseover', () => {
@@ -264,7 +273,7 @@
         right.classList.remove('active');        
     });
 
-    for(let i = 0; i < length; i++){
+    for(let i = 0, length = slides.length; i < length; i++){
 
         // check drag
         let drag = false;
