@@ -82,7 +82,7 @@
 }
 
 /* #others article .card:hover, */
-#others article .card.active
+#others article:hover .card
 {
     transform: rotateY(180deg);
 }

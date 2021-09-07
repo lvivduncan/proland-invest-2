@@ -420,33 +420,26 @@
         }
     }
 }
-
+/* 
 // flip
 {
-    const cards = document.querySelectorAll('.card');
-    const length = cards.length;
-    let flag = false;
+    const articles = document.querySelectorAll('#others article');
+    const length = articles.length;
 
     for(let i = 0; i < length; i++){
 
-        cards[i].addEventListener('mouseover', () => {
+        articles[i].addEventListener('mouseover', () => {
 
-            if(flag === false){
-
-                cards[i].classList.add('active');
-                flag = true;
-            }
+            articles[i].classList.add('active');
         });
 
-        cards[i].addEventListener('mouseout', () => {
+        articles[i].addEventListener('mouseout', () => {
 
-            cards[i].classList.remove('active');
-            flag = false;
+            articles[i].classList.remove('active');
         });
     }
-
 }
-
+ */
 
 
 
