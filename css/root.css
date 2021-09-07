@@ -11,6 +11,7 @@
 :root
 {
     --white: #fff;
+    --ultra-light: #f7f7f7;
     --light: #e9eef1;
     --gray: #ccc;
     --gray-dark: #818181;
@@ -30,7 +31,8 @@ body
 body
 {
     font-family: sans-serif;
-    color: var(--black);
+    /* color: var(--black); */
+    color: var(--dark);
     overflow-x: hidden;
 }
 
@@ -50,7 +52,7 @@ body
     content: '';
     display: block;
     position: fixed;
-    top: 80px;
+    top: 60px;
     left: 0;
     right: 0;
     bottom: 0;

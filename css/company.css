@@ -1,0 +1,203 @@
+#company
+{
+    padding: 30px 0;
+
+    background: 
+        linear-gradient(180deg,
+            var(--white) 0%,
+            var(--ultra-light) 1%,
+            var(--white) 1%,
+            var(--white) 12%,
+            var(--ultra-light) 12%,
+            var(--ultra-light) 16%,
+            var(--white) 16%, 
+            var(--white) 30%, 
+            var(--ultra-light) 30%, 
+            var(--ultra-light) 38%, 
+            var(--white) 38%, 
+            var(--white) 52%, 
+            var(--ultra-light) 52%, 
+            var(--ultra-light) 66%, 
+            var(--white) 66%, 
+            var(--white) 80%, 
+            var(--ultra-light) 80%, 
+            var(--ultra-light) 100%, 
+            var(--white) 100%);
+    background-position: center;
+}
+
+#company h1
+{
+    text-shadow: 2px 2px 0 rgb(153 153 153 / 50%);
+}
+
+/* #company .wrapper
+{
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+} */
+
+/***/
+.levus-horizontal-scroll
+{
+    position: relative;
+}
+
+.levus-slides
+{
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    width: 1200px;
+    margin: auto;
+
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+}
+
+@media(max-width: 1240px)
+{
+    .levus-slides
+    {
+        width: 95%;
+    }
+}
+
+/* .levus-horizontal-scroll
+{
+    background: var(--white);
+} */
+
+.levus-horizontal-scroll ul
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(20,25%);
+    left: -25%;
+}
+
+@media (max-width: 996px)
+{
+    .levus-horizontal-scroll ul
+    {
+        left: -33.333333%;
+        grid-template-columns: repeat(20,33.333333%);
+    }
+}
+
+@media (max-width: 776px)
+{
+    .levus-horizontal-scroll ul
+    {
+        left: -50%;
+        grid-template-columns: repeat(20,50%);
+    }
+}
+
+@media (max-width: 500px)
+{
+    .levus-horizontal-scroll ul
+    {
+        left: -100%;
+        grid-template-columns: repeat(20,100%);
+    }
+}
+
+.to-left
+{
+    transform: translateX(25%);
+}
+
+.to-right
+{
+    transform: translateX(-25%);
+}
+
+@media (max-width: 996px)
+{
+    .to-left
+    {
+        transform: translateX(33.333333%);
+    }
+    .to-right
+    {
+        transform: translateX(-33.333333%);
+    }
+}
+
+@media (max-width: 776px)
+{
+    .to-left
+    {
+        transform: translate(50%);
+    }
+    .to-right
+    {
+        transform: translate(-50%);
+    }
+}
+
+@media (max-width: 500px)
+{
+    .to-left
+    {
+        transform: translateX(100%);
+    }
+    .to-right
+    {
+        transform: translateX(-100%);
+    }
+}
+
+.levus-horizontal-scroll li
+{
+    display: block;
+    padding: 10px;
+    background: 
+        linear-gradient(135deg, 
+            var(--white) 0%, 
+            var(--light) 100%);
+}
+
+.levus-horizontal-scroll li article
+{
+    text-align: center;
+}
+
+/* заголовок блоку */
+.levus-horizontal-scroll li h2
+{
+    margin: 30px 0;
+    font-size: 24px;
+    transition: .5s;
+}
+
+.levus-horizontal-scroll li p
+{
+    padding: 10px;
+    line-height: 1.6;
+    margin: 30px 0;
+}
+
+.rating
+{
+    text-align: center;
+}
+
+/* fill */
+.rating em
+{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23818181' viewBox='0 0 16 16'%3E%3Cpath d='M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z'/%3E%3C/svg%3E");
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 1px;
+}
+
+/* not fill */
+.rating i
+{
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23818181' viewBox='0 0 16 16'%3E%3Cpath d='M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z'/%3E%3C/svg%3E");
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: 1px;
+}

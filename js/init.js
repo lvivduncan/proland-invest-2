@@ -420,26 +420,76 @@
         }
     }
 }
-/* 
-// flip
+
+// parallax
 {
-    const articles = document.querySelectorAll('#others article');
-    const length = articles.length;
+    const area = document.querySelector('#area');
 
-    for(let i = 0; i < length; i++){
+    const offsetTop = area.offsetTop;
 
-        articles[i].addEventListener('mouseover', () => {
+    const parallax = area.querySelector('.bg img');
+        
+    window.addEventListener('scroll', () => {
+        
+    const hightWindow = document.documentElement.clientHeight;
 
-            articles[i].classList.add('active');
-        });
+    const scroll = window.pageYOffset;
 
-        articles[i].addEventListener('mouseout', () => {
+        if (hightWindow + scroll > offsetTop) {
 
-            articles[i].classList.remove('active');
-        });
-    }
+            const offset = Math.round((hightWindow + scroll - offsetTop) / 3);
+
+            parallax.style.transform = `translateY(-${offset}px)`;
+        } else {
+
+            parallax.removeAttribute('style');
+        }
+    });
 }
- */
+
+
+// company
+{
+    // scroll
+    const scroll = document.querySelectorAll('.levus-horizontal-scroll');
+
+    scroll.forEach(item => {
+        const ul = item.querySelector('ul');
+
+        // elements
+        let li = ul.querySelectorAll('li');
+
+        // if less than 4, cloned 
+        if (li.length <= 4) {
+
+            // cloned and append elements
+            li.forEach(element => ul.append(element.cloneNode(true)));
+
+            // new nodelist
+            li = item.querySelectorAll('li');
+        }
+
+        setInterval(() => {
+            const ul = item.querySelector('ul');
+
+            // move first element
+            const first = ul.firstElementChild;
+            ul.append(first);
+
+            // destroy transition
+            ul.style.transition = 'none';
+            ul.classList.add('to-left');
+
+            setTimeout(() => {
+                ul.classList.remove('to-left');
+                ul.style.transition = '.5s';
+            }, 50);
+         
+        }, 3500);
+        
+    });
+}
+
 
 
 

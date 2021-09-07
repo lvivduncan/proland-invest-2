@@ -23,7 +23,7 @@
     background: var(--white);
     height: 100%;
     box-shadow: 0 0 15px rgba(0,0,0,.3);
-    outline: 5px solid var(--light);
+    border: 5px solid var(--light);
 }
 
 #slider .slides
