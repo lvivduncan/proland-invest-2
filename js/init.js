@@ -421,7 +421,31 @@
     }
 }
 
+// flip
+{
+    const cards = document.querySelectorAll('.card');
+    const length = cards.length;
+    let flag = false;
 
+    for(let i = 0; i < length; i++){
+
+        cards[i].addEventListener('mouseover', () => {
+
+            if(flag === false){
+
+                cards[i].classList.add('active');
+                flag = true;
+            }
+        });
+
+        cards[i].addEventListener('mouseout', () => {
+
+            cards[i].classList.remove('active');
+            flag = false;
+        });
+    }
+
+}
 
 
 
