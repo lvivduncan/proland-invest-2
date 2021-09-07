@@ -1,18 +1,8 @@
 #footer
 {
-    /* height: 420px; */
-    /* background: url('../images/footer.jpg') no-repeat center; */
     background: var(--dark);
     position: relative;
-    overflow: hidden;
-}
-
-@media(max-width:500px)
-{
-    #footer
-    {
-        height: 500px;
-    }
+    padding: 30px 0 0;
 }
 
 #footer .wrapper
@@ -112,7 +102,6 @@
     {
         width: 100%;
         text-align: center;
-        /* top: -20px; */
     }
 }
 
