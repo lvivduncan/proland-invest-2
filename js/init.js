@@ -6,8 +6,6 @@
 
     window.addEventListener('scroll', () => {
 
-        console.log(window.pageYOffset)
-
         if(window.pageYOffset > 50){
 
             header.className = 'scroll';
@@ -447,7 +445,6 @@
     });
 }
 
-
 // company
 {
     // scroll
@@ -490,7 +487,53 @@
     });
 }
 
+// flip
+{
+    const flip = document.querySelectorAll('.flip');
+    const length = flip.length;
 
+    for(let i = 0; i < length; i++){
 
+        if(isTouchDevice()){
 
-// 6-09-2021
+            flip[i].addEventListener('click', function(){
+
+                const current = this;
+
+                if(this.classList.contains('active')){
+
+                    for(let k = 0; k < length; k++){
+                        
+                        flip[k].classList.remove('active');
+                    }
+                } else {
+
+                    for(let k = 0; k < length; k++){
+                        
+                        flip[k].classList.remove('active');
+                    }
+
+                    current.classList.add('active');
+                }                
+            });
+        } else {
+
+            flip[i].addEventListener('mouseover', function() {
+
+                this.classList.add('active');
+            });
+
+            flip[i].addEventListener('mouseout', function(){
+
+                this.classList.remove('active');
+            });
+        }
+    }
+
+    // check devices
+    function isTouchDevice() {
+        return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+    }
+}
+
+// 8-09-2021
