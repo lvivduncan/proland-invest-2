@@ -137,6 +137,7 @@
 #footer button:hover
 {
     background: var(--black);
+    color: var(--white);
 }
 
 #contact
