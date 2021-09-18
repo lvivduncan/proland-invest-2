@@ -120,9 +120,9 @@
 {
     font-weight: 700;
     font-size: 18px;
-    background: var(--gray-dark);
+    /* background: var(--gray-dark); */
     /* color: var(--white); */
-    color: var(--black);
+    /* color: var(--black); */
     outline: none;
     border: none;
     cursor: pointer;
@@ -132,12 +132,15 @@
     padding: 10px;
     height: 52px;
     transition: .5s;
+
+    background: var(--black);
+    color: var(--white);
 }
 
 #footer button:hover
 {
-    background: var(--black);
-    color: var(--white);
+    background: var(--white);
+    color: var(--black);
 }
 
 #contact
