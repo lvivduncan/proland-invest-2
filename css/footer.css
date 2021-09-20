@@ -194,6 +194,29 @@
     color: var(--gray-dark);
 }
 
+#copy em
+{
+    font-style: normal;
+}
+
+#copy em::before
+{
+    content: '|';
+    display: inline-block;
+}
+
+@media(max-width:500px)
+{
+    #copy em 
+    {
+        display: block;
+    }
+    #copy em::before
+    {
+        display: none;
+    }
+}
+
 #copy p
 {
     padding: 10px 0;
@@ -208,4 +231,13 @@
 #copy a:hover
 {
     text-decoration: none;
+}
+
+@media(max-width:776px)
+{
+    #copy 
+    {
+        font-size: 14px;
+        padding: 0 5px;
+    }
 }
