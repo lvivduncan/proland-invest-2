@@ -1,0 +1,39 @@
+
+#gallery picture
+{
+    display: block;
+    border: 5px solid var(--white);
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+}
+
+.col-3
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+    margin: 30px auto;
+}
+
+@media(max-width:776px)
+{
+    .col-3
+    {
+        grid-template-columns: 1fr;
+    }
+}
+
+.col-2
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 30px;
+    margin: 30px auto;
+}
+
+@media(max-width:776px)
+{
+    .col-2
+    {
+        grid-template-columns: 1fr;
+    }
+}

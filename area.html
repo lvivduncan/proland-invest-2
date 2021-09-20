@@ -96,6 +96,63 @@
     </header>
 
     <!-- area -->
+    <section id="area">
+        <h1><span>Назва об'єкту</span></h1>
+        <div class="wrapper">
+            <div id="area-map"></div>
+        </div>
+    </section>
+
+    <div id="gallery">
+        <!-- якщо 1 фото -- велике на всю ширину шпальти -->
+        <div class="wrapper">
+            <picture>
+                <img src="temp/05.jpg" alt="">
+            </picture>
+        </div>
+
+        <!-- якщо фото кратні 2 --  -->
+        <div class="wrapper col-2">
+            <picture>
+                <img src="temp/05.jpg" alt="">
+            </picture>
+            <picture>
+                <img src="temp/06.jpg" alt="">
+            </picture>
+        </div>
+
+        <!-- якщо фото кратні 3 --  -->
+        <div class="wrapper col-3">
+            <picture>
+                <img src="temp/05.jpg" alt="">
+            </picture>
+            <picture>
+                <img src="temp/06.jpg" alt="">
+            </picture>
+            <picture>
+                <img src="temp/07.jpg" alt="">
+            </picture>
+        </div>
+    
+    </div>
+
+    <div id="content" class="parallax-wrapper">
+        <picture class="parallax">
+            <!-- <source srcset="images/bg-vertical.jpg" media="(max-width: 1500px)" type="image/jpeg"> -->
+            <!-- <source srcset="images/bg.jpg" type="image/jpeg"> -->
+            <img src="temp/07.jpg" alt="">
+        </picture>
+
+        <div class="wrapper">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <p><strong>Lorem ipsum</strong> dolor sit amet <em>consectetur adipisicing</em> elit. Voluptate iusto molestiae ipsam doloribus voluptates temporibus reiciendis ducimus labore fugiat totam adipisci et veritatis quas, voluptatibus quaerat ratione eveniet officia modi. Cumque delectus rem est, necessitatibus neque facilis optio expedita magnam numquam consectetur voluptates mollitia nobis officia? Earum laborum quidem numquam odio voluptatibus animi, sapiente quibusdam at, dignissimos consequuntur quasi cum natus reiciendis quia non eum quo odit omnis dicta nam architecto?</p>
+            <p>Ut nam laborum quo sapiente iste sequi, dignissimos eligendi sunt reiciendis quos minus, quibusdam a facilis adipisci culpa at neque nulla perferendis rerum. Dolorem incidunt dolorum praesentium non, ratione esse inventore repellendus nisi beatae ad aut alias? At omnis dolorem odit explicabo corrupti, consequatur cum eligendi! Possimus, quae assumenda natus quibusdam ipsa architecto veritatis soluta ducimus minus voluptas porro beatae ut modi temporibus dolorum eos incidunt. Dolores, sapiente perspiciatis!</p>
+            <p>Tempore temporibus qui doloribus esse expedita inventore est vitae quibusdam obcaecati ducimus soluta, fuga laborum commodi cumque iure natus accusantium! Libero nulla in vitae alias praesentium ducimus magnam debitis quos autem facere saepe tenetur nam repudiandae et odio excepturi dolore perspiciatis, dicta iure rerum ab! Officiis provident veritatis inventore rerum assumenda accusantium non fugit exercitationem, fugiat id vel earum optio.</p>
+        </div>
+    </div>
 
     <footer id="footer">
 
@@ -152,6 +209,23 @@
             <p>&copy; 2021 PRO Land Invest <em></em> Powered by <a href="//ova.in.ua" title="OVA Studio">OVA Studio</a></p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script>
+        // для внутрішньої розмір 17 (ближче)
+        let mymap = L.map('area-map').setView([49.899444, 23.943889], 17);
+
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            maxZoom: 18,
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1,
+            accessToken: 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw'
+        }).addTo(mymap);
+
+        let marker1 = L.marker([49.899444, 23.943889]).addTo(mymap);
+    </script>
 
     <script src="js/init.js"></script>
 </body>

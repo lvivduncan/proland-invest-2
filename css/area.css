@@ -1,0 +1,15 @@
+/* area template */
+#area
+{
+    background: url('../images/map.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    padding: 60px 0 30px;
+}
+
+#area h1
+{
+    text-shadow: 2px 2px 0 rgb(153 153 153 / 50%);
+}

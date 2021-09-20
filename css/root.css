@@ -138,10 +138,9 @@ h2 > a
     transform: scaleX(.8);
 }
 
-
-
 img
 {
     max-width: 100%;
     height: auto;
+    vertical-align: middle;
 }

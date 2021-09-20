@@ -1,0 +1,60 @@
+#content
+{
+    padding: 30px 0;
+}
+
+#content .wrapper
+{
+    background: var(--white);
+    position: relative;
+    z-index: 3;
+    border: 5px solid var(--light);
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+
+    padding: 30px;
+}
+
+#content h1
+{
+    text-transform: none;
+    text-align: left;
+}
+
+#content h2
+{
+    text-transform: none;
+    font-size: 42px;
+    text-align: left;
+}
+
+#content h3
+{
+    font-weight: 500;
+    text-transform: none;
+    font-size: 32px;
+    margin: 0 0 30px;
+}
+
+#content h4
+{
+    font-weight: 500;
+    text-transform: none;
+    font-size: 22px;
+    margin: 0 0 30px;
+}
+
+#content p
+{
+    margin: 0 0 30px;
+    line-height: 1.7;
+}
+
+#content p:last-child
+{
+    margin: 0;
+}
+
+#content em
+{
+    color: var(--gray-dark);
+}

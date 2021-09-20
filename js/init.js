@@ -174,275 +174,285 @@
 {
     const slider = document.getElementById('slider');
 
-    // slides includes img and title
-    const slides = slider.querySelectorAll('article');
+    if(slider !== null){
+        // slides includes img and title
+        const slides = slider.querySelectorAll('article');
 
-    // quantity
-    const length = slides.length;
+        // quantity
+        const length = slides.length;
 
-    let counter = 0;
+        let counter = 0;
 
-    // get interval id
-    let interval;
+        // get interval id
+        let interval;
 
-    // speed animation
-    let speed = 6000;
+        // speed animation
+        let speed = 6000;
 
-    startSlides();
+        startSlides();
 
-    for(let i = 0; i < length; i++){
+        for(let i = 0; i < length; i++){
 
-        slides[i].addEventListener('mouseover', stopSlides);
-        slides[i].addEventListener('mouseout', startSlides);
-    }
-   
-    function startSlides(){
+            slides[i].addEventListener('mouseover', stopSlides);
+            slides[i].addEventListener('mouseout', startSlides);
+        }
+    
+        function startSlides(){
 
-        interval = setInterval(() => {
+            interval = setInterval(() => {
 
-            if(counter !== length-1){
+                if(counter !== length-1){
 
-                counter++;
-                
-                for(let i = 0; i < length; i++){
-        
-                    for(let k = 0; k < length; k++){
-                        slides[k].className = '';
+                    counter++;
+                    
+                    for(let i = 0; i < length; i++){
+            
+                        for(let k = 0; k < length; k++){
+                            slides[k].className = '';
+                        }
+            
                     }
-        
-                }
-                slides[counter].className = 'active';
+                    slides[counter].className = 'active';
 
-            } else {
+                } else {
 
-                counter = 0;
-                
-                for(let i = 0; i < length; i++){
-        
-                    for(let k = 0; k < length; k++){
-                        slides[k].className = '';
+                    counter = 0;
+                    
+                    for(let i = 0; i < length; i++){
+            
+                        for(let k = 0; k < length; k++){
+                            slides[k].className = '';
+                        }
+            
                     }
-        
+                    slides[counter].className = 'active';
+
                 }
-                slides[counter].className = 'active';
+            }, speed);
+        }
 
-            }
-        }, speed);
+        function stopSlides(){
+
+            clearInterval(interval);
+            // speed = 2000;
+        }
     }
-
-    function stopSlides(){
-
-        clearInterval(interval);
-        // speed = 2000;
-    }
-
 }
 
 // swipe slider
 {
     const hotSlider = document.querySelector('#hot-slider');
-    const slides = hotSlider.querySelectorAll('article');
 
-    const left = document.createElement('div');
-    left.className = 'left';
+    if(hotSlider !== null){
 
-    // left arrow
-    hotSlider.append(left);
+        const slides = hotSlider.querySelectorAll('article');
 
-    const right = document.createElement('div');
-    right.className = 'right';
+        const left = document.createElement('div');
+        left.className = 'left';
 
-    // right arrow
-    hotSlider.append(right);
+        // left arrow
+        hotSlider.append(left);
 
-    // arrows
-    hotSlider.addEventListener('mouseover', () => {
+        const right = document.createElement('div');
+        right.className = 'right';
 
-        // show
-        left.classList.add('active');
-        right.classList.add('active');
-    });
+        // right arrow
+        hotSlider.append(right);
 
-    // arrows
-    hotSlider.addEventListener('mouseout', () => {
+        // arrows
+        hotSlider.addEventListener('mouseover', () => {
 
-        // hide
-        left.classList.remove('active');
-        right.classList.remove('active');
-    });
-
-    for(let i = 0, length = slides.length; i < length; i++){
-
-        // check drag
-        let drag = false;
-
-        // start drag pointer
-        let start = 0;
-
-        // finish drag pointer
-        let finish = 0;
-
-        // check shift
-        let shift = 0;
-
-        // check shift
-        let flag = false;
-
-        // create array shift translateX
-        const translate = [];
-
-        // fill array items
-        for(let k = 0; k < slides.length; k++){
-            translate.push(k * 100 - 100);
-        }
-
-        render();
-
-        events();
-
-        // to left
-        left.addEventListener('click', () => {
-
-            const first = translate.pop();
-            translate.unshift(first);
-
-            render();
-        });
-    
-        // to right
-        right.addEventListener('click', () => {
-    
-            const last = translate.shift();
-            translate.push(last);
-
-            render();
+            // show
+            left.classList.add('active');
+            right.classList.add('active');
         });
 
-        function scrollStart(event){
+        // arrows
+        hotSlider.addEventListener('mouseout', () => {
 
-            drag = true;
-    
-            this.classList.add('grabbing');
-    
-            // where they clicked
-            start = event.pageX || event.touches[0].clientX;
-        }
-    
-        function scrollMove(event){
-    
-            if(drag){
-    
-                // where they dragged
-                finish = event.pageX || event.touches[0].clientX;
-    
-                // if to left
-                if(finish - start < 0){
-    
-                    shift = finish - start;
-    
-                    if(flag === false){
-    
-                        flag = true;
-                    }
-                } 
-                
-                // if to right
-                if(finish - start > 0) { 
-    
-                    shift = Math.abs(start - finish);
-    
-                    if(flag === false){
-    
-                        flag = true;
-                    }
-                }
-    
-                this.style.transform = `translateX(${shift}px)`;
+            // hide
+            left.classList.remove('active');
+            right.classList.remove('active');
+        });
+
+        for(let i = 0, length = slides.length; i < length; i++){
+
+            // check drag
+            let drag = false;
+
+            // start drag pointer
+            let start = 0;
+
+            // finish drag pointer
+            let finish = 0;
+
+            // check shift
+            let shift = 0;
+
+            // check shift
+            let flag = false;
+
+            // create array shift translateX
+            const translate = [];
+
+            // fill array items
+            for(let k = 0; k < slides.length; k++){
+                translate.push(k * 100 - 100);
             }
-        }
-    
-        function scrollEnd(){
-    
-            // to right
-            if(finish - start < 0){
-                
+
+            render();
+
+            events();
+
+            // to left
+            left.addEventListener('click', () => {
+
                 const first = translate.pop();
                 translate.unshift(first);
-            } 
-    
-            // to left
-            if(finish - start > 0) {
-                
+
+                render();
+            });
+        
+            // to right
+            right.addEventListener('click', () => {
+        
                 const last = translate.shift();
                 translate.push(last);
-            }
-    
-            render();
-    
-            // set null
-            drag = false;
-    
-            // set null
-            flag = false;
-    
-            this.classList.remove('grabbing');
-        }
+
+                render();
+            });
+
+            function scrollStart(event){
+
+                drag = true;
         
-        function render(){
-            for(let i = 0; i < slides.length; i++){
-    
-                if(translate[i] === 0){
-                    slides[i].style.opacity = 1;
-                } else{
-                    slides[i].style.opacity = 0;
-                }
-                
-                slides[i].style.transform = `translateX(${translate[i]}%)`;
+                this.classList.add('grabbing');
+        
+                // where they clicked
+                start = event.pageX || event.touches[0].clientX;
             }
-        }
-    
-        function events(){
-            for(let i = 0; i < slides.length; i++){
-                slides[i].querySelector('img').addEventListener('dragstart', event => event.preventDefault());
-    
-                // touch
-                slides[i].addEventListener('touchstart', scrollStart, false);
-                slides[i].addEventListener('touchmove', scrollMove, false);
-                slides[i].addEventListener('touchend', scrollEnd, false);
-    
-                // click
-                slides[i].addEventListener('mousedown', scrollStart, false);
-                slides[i].addEventListener('mousemove', scrollMove, false);
-                slides[i].addEventListener('mouseup', scrollEnd, false);
+        
+            function scrollMove(event){
+        
+                if(drag){
+        
+                    // where they dragged
+                    finish = event.pageX || event.touches[0].clientX;
+        
+                    // if to left
+                    if(finish - start < 0){
+        
+                        shift = finish - start;
+        
+                        if(flag === false){
+        
+                            flag = true;
+                        }
+                    } 
+                    
+                    // if to right
+                    if(finish - start > 0) { 
+        
+                        shift = Math.abs(start - finish);
+        
+                        if(flag === false){
+        
+                            flag = true;
+                        }
+                    }
+        
+                    this.style.transform = `translateX(${shift}px)`;
+                }
+            }
+        
+            function scrollEnd(){
+        
+                // to right
+                if(finish - start < 0){
+                    
+                    const first = translate.pop();
+                    translate.unshift(first);
+                } 
+        
+                // to left
+                if(finish - start > 0) {
+                    
+                    const last = translate.shift();
+                    translate.push(last);
+                }
+        
+                render();
+        
+                // set null
+                drag = false;
+        
+                // set null
+                flag = false;
+        
+                this.classList.remove('grabbing');
+            }
+            
+            function render(){
+                for(let i = 0; i < slides.length; i++){
+        
+                    if(translate[i] === 0){
+                        slides[i].style.opacity = 1;
+                    } else{
+                        slides[i].style.opacity = 0;
+                    }
+                    
+                    slides[i].style.transform = `translateX(${translate[i]}%)`;
+                }
+            }
+        
+            function events(){
+                for(let i = 0; i < slides.length; i++){
+                    slides[i].querySelector('img').addEventListener('dragstart', event => event.preventDefault());
+        
+                    // touch
+                    slides[i].addEventListener('touchstart', scrollStart, false);
+                    slides[i].addEventListener('touchmove', scrollMove, false);
+                    slides[i].addEventListener('touchend', scrollEnd, false);
+        
+                    // click
+                    slides[i].addEventListener('mousedown', scrollStart, false);
+                    slides[i].addEventListener('mousemove', scrollMove, false);
+                    slides[i].addEventListener('mouseup', scrollEnd, false);
+                }
             }
         }
     }
+
 }
 
 // parallax
 {
-    const area = document.querySelector('#areas');
+    // const area = document.querySelector('#areas');
+    const wrapper = document.querySelector('.parallax-wrapper');
 
-    const offsetTop = area.offsetTop;
+    if(wrapper !== null){
 
-    const parallax = area.querySelector('.bg img');
-        
-    window.addEventListener('scroll', () => {
-        
-    const hightWindow = document.documentElement.clientHeight;
+        const offsetTop = wrapper.offsetTop;
 
-    const scroll = window.pageYOffset;
+        const parallax = wrapper.querySelector('.parallax img');
+            
+        window.addEventListener('scroll', () => {
+            
+        const hightWindow = document.documentElement.clientHeight;
 
-        if (hightWindow + scroll > offsetTop) {
+        const scroll = window.pageYOffset;
 
-            const offset = Math.round((hightWindow + scroll - offsetTop) / 3);
+            if (hightWindow + scroll > offsetTop) {
 
-            parallax.style.transform = `translateY(-${offset}px)`;
-        } else {
+                const offset = Math.round((hightWindow + scroll - offsetTop) / 3);
 
-            parallax.removeAttribute('style');
-        }
-    });
+                parallax.style.transform = `translateY(-${offset}px)`;
+            } else {
+
+                parallax.removeAttribute('style');
+            }
+        });
+    }
 }
 
 // company

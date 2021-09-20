@@ -1,0 +1,37 @@
+/* 1 паралакс на сторінці */
+.parallax-wrapper
+{
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.parallax
+{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    transition: .1s;
+}
+
+@media(max-width:776px)
+{
+    .parallax
+    {
+        transform: translateX(0)!important;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.parallax-wrapper .wrapper
+{
+    position: relative;
+    z-index: 2;
+}
+
+.parallax img
+{
+    width: 100%;
+}
