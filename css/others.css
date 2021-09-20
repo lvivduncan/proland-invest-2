@@ -4,6 +4,14 @@
     position: relative;
 }
 
+@media(max-width:776px)
+{
+    #others
+    {
+        padding: 0;
+    }    
+}
+
 #others::before
 {
     content: '';
@@ -42,7 +50,8 @@
 {
     #others .wrapper
     {
-        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr; */
+        display: none;
     }
 }
 
@@ -58,14 +67,23 @@
 
 @media(max-width:776px)
 {
-    #others article
+/*     #others article
     {
         height: 280px;
-    }
+    } */
 }
 
+#other .center-button
+{
+    display: none;
+}
 
-
-
+@media(max-width:776px)
+{
+    #other .center-button
+    {
+        display: block;
+    }    
+}
 
 
