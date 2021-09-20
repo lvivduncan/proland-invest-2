@@ -421,7 +421,7 @@
 
 // parallax
 {
-    const area = document.querySelector('#area');
+    const area = document.querySelector('#areas');
 
     const offsetTop = area.offsetTop;
 

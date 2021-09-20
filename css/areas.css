@@ -1,4 +1,4 @@
-#area
+#areas
 {
     padding: 30px 0;
     overflow: hidden;
@@ -6,7 +6,7 @@
     z-index: 1;
 }
 
-#area h1
+#areas h1
 {
     position: relative;
     z-index: 3;
@@ -15,7 +15,7 @@
     text-shadow: 2px 2px 0 rgb(0 0 0 / 50%);
 }
 
-#area .wrapper
+#areas .wrapper
 {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -29,7 +29,7 @@
 
 @media(max-width:776px)
 {
-    #area .wrapper
+    #areas .wrapper
     {
         grid-template-columns: 1fr;
         grid-gap: 5px;
@@ -125,7 +125,7 @@
     }
 }
 
-#area .bg
+#areas .bg
 {
     position: absolute;
     z-index: 2;
@@ -134,14 +134,14 @@
     transition: .1s;
 }
 
-#area .bg img
+#areas .bg img
 {
     width: 100%;
 }
 
 @media(max-width:776px)
 {
-    #area .bg img
+    #areas .bg img
     {
         transform: translateX(0)!important;
         height: 100%;
