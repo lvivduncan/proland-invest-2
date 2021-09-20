@@ -50,7 +50,6 @@
 {
     #others .wrapper
     {
-        /* grid-template-columns: 1fr; */
         display: none;
     }
 }
@@ -65,24 +64,16 @@
     perspective: 800px;
 }
 
-@media(max-width:776px)
-{
-/*     #others article
-    {
-        height: 280px;
-    } */
-}
-
-#other .center-button
+#others .center-button
 {
     display: none;
 }
 
 @media(max-width:776px)
 {
-    #other .center-button
+    #others .center-button
     {
-        display: block;
+        display: flex;
     }    
 }
 

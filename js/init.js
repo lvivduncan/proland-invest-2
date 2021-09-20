@@ -494,6 +494,7 @@
 
     for(let i = 0; i < length; i++){
 
+        // mobile devices
         if(isTouchDevice()){
 
             flip[i].addEventListener('click', function(){
@@ -514,7 +515,7 @@
                     }
 
                     current.classList.add('active');
-                }                
+                }
             });
         } else {
 
