@@ -204,3 +204,46 @@
     height: 32px;
     fill: var(--white);
 }
+
+#lang a
+{
+    display: none;
+    border: 3px solid var(--white);
+    border-radius: 42px;
+    width: 42px;
+    height: 42px;
+}
+
+#lang a.active
+{
+    display: block;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lang a:hover
+{
+    border-color: var(--gray);
+    color: var(--gray);
+}
+
+@media(max-width:996px)
+{
+    #nav ul.active li#lang
+    {
+        margin-top: 30px;
+    }
+    #nav ul.active li#lang a
+    {
+        display: none;
+    }
+    #nav ul.active li#lang a.active
+    {
+        display: flex;
+        margin: auto;
+        align-items: center;
+        justify-content: center;
+    }
+}
