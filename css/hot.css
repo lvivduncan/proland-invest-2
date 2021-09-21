@@ -8,12 +8,6 @@
     padding: 60px 0 0;
 }
 
-#hot > h1
-{
-    text-shadow: 2px 2px 0 rgb(153 153 153 / 50%);
-}
-
-
 #hot-slider
 {
     box-shadow: 0 0 15px rgba(0,0,0,.3);

@@ -1,0 +1,35 @@
+#order
+{
+    visibility: hidden;
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    left: calc(50% - 51px);
+    cursor: pointer;
+    text-align: center;
+    color: var(--white);
+    background: var(--dark);
+    padding: 5px;
+    border: 5px solid var(--white);
+    box-shadow: 0 0 15px rgb(0 0 0 / 30%);
+    transition: .5s;
+}
+
+#order.active
+{
+    visibility: visible;
+}
+
+#order:hover
+{
+    transform: translateY(-10px);
+}
+
+#order svg
+{
+    fill: var(--white);
+    width: 54px;
+    height: 54px;
+    display: block;
+    margin: auto;
+}

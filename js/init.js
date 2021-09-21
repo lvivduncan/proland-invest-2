@@ -427,7 +427,6 @@
 
 // parallax
 {
-    // const area = document.querySelector('#areas');
     const wrapper = document.querySelector('.parallax-wrapper');
 
     if(wrapper !== null){
@@ -452,7 +451,8 @@
                 parallax.removeAttribute('style');
             }
         });
-    }
+    }        
+    
 }
 
 // company
@@ -547,7 +547,9 @@
     }
 }
 
-// 18-09-2021
+
+
+/* // 18-09-2021
 {
     const levusUp = document.createElement('div');
     levusUp.setAttribute('id', 'levus-up');
@@ -572,6 +574,32 @@
             behavior: 'smooth'
         });
     });
+} */
+
+{
+    const order = document.getElementById('order');
+    
+    if(order !== null){
+        // show/hide
+        window.addEventListener('scroll', () => {
+            if(window.pageYOffset < 50){
+                order.className = '';
+            } else if(window.pageYOffset > 100) {
+                setTimeout( () => {
+                    order.className = 'active';
+                }, 10);
+            }
+        });
+
+        // // click to up
+        // levusUp.addEventListener('click', () => {
+        //     document.documentElement.scroll({
+        //         top: 0,
+        //         left: 0,
+        //         behavior: 'smooth'
+        //     });
+        // });
+    }
 }
 
-// 18-09-2021
+// 21-09-2021

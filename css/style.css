@@ -1,5 +1,7 @@
 @import url('./root.css');
 
+@import url('./title.css');
+
 @import url('./header.css');
 
 @import url('./slider.css');
@@ -32,3 +34,6 @@
 @import url('./content.css');
 
 @import url('./parallax.css');
+
+/* блок "оформити заявку" */
+@import url('./order.css');
