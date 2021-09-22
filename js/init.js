@@ -206,7 +206,7 @@
     }
 }
 
-// slider
+// (auto) slider
 {
     const slider = document.getElementById('slider');
 
@@ -275,7 +275,7 @@
     }
 }
 
-// swipe slider
+// (hot) swipe slider
 {
     const hotSlider = document.querySelector('#hot-slider');
 
@@ -356,6 +356,26 @@
                 translate.push(last);
 
                 render();
+            });
+
+            // keyboard
+            document.addEventListener('keydown', event => {
+
+                if(event.key === 'ArrowLeft' || event.code === 'ArrowLeft'){
+                    
+                    const first = translate.pop();
+                    translate.unshift(first);
+    
+                    render();
+                }
+                
+                if(event.key === 'ArrowRight' || event.code === 'ArrowRight'){
+                    
+                    const last = translate.shift();
+                    translate.push(last);
+    
+                    render();
+                }
             });
 
             function scrollStart(event){
@@ -447,17 +467,6 @@
             function events(){
                 for(let i = 0; i < slides.length; i++){
                     slides[i].querySelector('img').addEventListener('dragstart', event => event.preventDefault());
-        /* 
-                    // touch
-                    slides[i].addEventListener('touchstart', scrollStart, false);
-                    slides[i].addEventListener('touchmove', scrollMove, false);
-                    slides[i].addEventListener('touchend', scrollEnd, false);
-        
-                    // click
-                    slides[i].addEventListener('mousedown', scrollStart, false);
-                    slides[i].addEventListener('mousemove', scrollMove, false);
-                    slides[i].addEventListener('mouseup', scrollEnd, false);
- */
 
                     slides[i].addEventListener('pointerdown', scrollStart);
                     slides[i].addEventListener('pointermove', scrollMove);

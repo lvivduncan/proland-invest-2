@@ -1,11 +1,13 @@
 h1.title
 {
     text-shadow: 2px 2px 0 rgb(153 153 153 / 50%);
+    text-align: center;
 }
 
 h1.title span
 {
     position: relative;
+    text-transform: uppercase;
 }
 
 h1.title span::before

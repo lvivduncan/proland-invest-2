@@ -106,11 +106,18 @@
     transition: 6s;
     color: var(--white);
     margin: 0;
+    text-align: center;
 }
 
 #slider article.active h1
 {
-    transform: translateY(250px);
+    transform: translateY(200px);
+}
+
+#slider article h1 a
+{
+    color: var(--white);
+    text-decoration: none;
 }
 
 #slider article h2
@@ -129,7 +136,7 @@
 
 #slider article.active h2
 {
-    transform: translateY(-250px);
+    transform: translateY(-200px);
 }
 
 #slider article h2 a
