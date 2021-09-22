@@ -4,11 +4,6 @@
     background: var(--ultra-light)
 }
 
-/* #faq h1
-{
-    text-shadow: 2px 2px 0 rgb(153 153 153 / 50%);
-} */
-
 #faq .wrapper
 {
     display: grid;

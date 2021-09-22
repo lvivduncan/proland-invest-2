@@ -3,11 +3,6 @@
     padding: 60px 0;
 }
 
-/* #docs > h1
-{
-    text-shadow: 2px 2px 0 rgb(153 153 153 / 50%);
-} */
-
 #docs .wrapper
 {
     display: grid;

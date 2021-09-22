@@ -17,9 +17,6 @@
     --gray-dark: #818181;
     --dark: #17192b;
     --black: #000;
-
-    /* --opacity50: rgba(0,0,0,.5); */
-    /* --transparent50: rgba(255,255,255,.5); */
 }
 
 html,
@@ -31,7 +28,6 @@ body
 body
 {
     font-family: sans-serif;
-    /* color: var(--black); */
     color: var(--dark);
     overflow-x: hidden;
 }
@@ -43,8 +39,7 @@ body
     left: 0;
     right: 0;
     bottom: 0;
-
-    z-index: 1;
+    z-index: 5;
 }
 
 #cover::before
@@ -143,4 +138,17 @@ img
     max-width: 100%;
     height: auto;
     vertical-align: middle;
+}
+
+/* del arrow */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]
+{
+    -moz-appearance: textfield;
 }

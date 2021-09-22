@@ -1,5 +1,6 @@
 // 1-09-2021
 
+
 // small header
 {
     const header = document.getElementById('header');
@@ -16,11 +17,11 @@
     });
 }
 
-// menu and phones
+// menu, phones and modal-order
 {
     const body = document.getElementsByTagName('body')[0];
 
-    // create element for phone and mobile menu
+    // create global element for phone and mobile menu and order-form
     const cover = document.createElement('div');
     cover.setAttribute('id', 'cover');
 
@@ -38,6 +39,32 @@
 
     // check menu click
     let clickMenu = false;
+
+        const order = document.getElementById('order');
+
+        const form = document.getElementById('order-form');
+        
+        if(order !== null){
+
+            // show/hide
+            window.addEventListener('scroll', () => {
+                if(window.pageYOffset < 50){
+                    order.className = '';
+                } else if(window.pageYOffset > 100) {
+                    setTimeout( () => {
+                        order.className = 'active';
+                    }, 10);
+                }
+            });
+
+            order.addEventListener('click', () => {
+
+                // insert cover and wiev mobile menu
+                body.append(cover);
+
+                form.classList.add('active');
+            });
+        }       
 
     phone.addEventListener('click', () => {
 
@@ -161,6 +188,9 @@
 
         // hide mobile phones
         phoneUl.classList.remove('active');
+
+        // hide order form
+        form.classList.remove('active');
         
         // set null
         clickPhone = false;
@@ -547,59 +577,4 @@
     }
 }
 
-
-
-/* // 18-09-2021
-{
-    const levusUp = document.createElement('div');
-    levusUp.setAttribute('id', 'levus-up');
-    document.body.append(levusUp);
-
-    // show/hide
-    window.addEventListener('scroll', () => {
-        if(window.pageYOffset < 50){
-            levusUp.className = '';
-        } else if(window.pageYOffset > 100) {
-            setTimeout( () => {
-                levusUp.className = 'active';
-            }, 10);
-        }
-    });
-
-    // click to up
-    levusUp.addEventListener('click', () => {
-        document.documentElement.scroll({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    });
-} */
-
-{
-    const order = document.getElementById('order');
-    
-    if(order !== null){
-        // show/hide
-        window.addEventListener('scroll', () => {
-            if(window.pageYOffset < 50){
-                order.className = '';
-            } else if(window.pageYOffset > 100) {
-                setTimeout( () => {
-                    order.className = 'active';
-                }, 10);
-            }
-        });
-
-        // // click to up
-        // levusUp.addEventListener('click', () => {
-        //     document.documentElement.scroll({
-        //         top: 0,
-        //         left: 0,
-        //         behavior: 'smooth'
-        //     });
-        // });
-    }
-}
-
-// 21-09-2021
+// 22-09-2021

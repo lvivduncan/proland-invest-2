@@ -98,7 +98,6 @@
     }    
 }
 
-/* @media(max-width:500px) */
 @media(max-width:650px)
 {
     #hot-slider .left
@@ -159,7 +158,6 @@
             rgba(0,0,0,.1) 100%);
 }
 
-/* @media(max-width:500px) */
 @media(max-width:650px)
 {
     #hot-slider article hgroup
@@ -182,7 +180,6 @@
     }
 }
 
-/* @media(max-width:500px) */
 @media(max-width:650px)
 {
     #hot-slider article h1
