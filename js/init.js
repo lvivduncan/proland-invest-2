@@ -98,6 +98,9 @@
             // set null
             clickPhone = false;
         }
+
+        // close order form (if exists)
+        form && form.classList.remove('active');
     });
 
     // menu
@@ -146,6 +149,9 @@
             // set null
             clickMenu = false;
         }
+
+        // close order form (if exists)
+        form && form.classList.remove('active');
     });
 
     document.addEventListener('click', e => {
@@ -190,7 +196,7 @@
         phoneUl.classList.remove('active');
 
         // hide order form
-        form.classList.remove('active');
+        form && form.classList.remove('active');
         
         // set null
         clickPhone = false;
@@ -397,29 +403,32 @@
         
             function scrollEnd(){
         
-                // to right
-                if(finish - start < 0){
+                if(drag){
                     
-                    const first = translate.pop();
-                    translate.unshift(first);
-                } 
-        
-                // to left
-                if(finish - start > 0) {
-                    
-                    const last = translate.shift();
-                    translate.push(last);
+                    // to right
+                    if(finish - start < 0){
+                        
+                        const first = translate.pop();
+                        translate.unshift(first);
+                    } 
+            
+                    // to left
+                    if(finish - start > 0) {
+                        
+                        const last = translate.shift();
+                        translate.push(last);
+                    }
+            
+                    render();
+            
+                    // set null
+                    drag = false;
+            
+                    // set null
+                    flag = false;
+            
+                    this.classList.remove('grabbing');
                 }
-        
-                render();
-        
-                // set null
-                drag = false;
-        
-                // set null
-                flag = false;
-        
-                this.classList.remove('grabbing');
             }
             
             function render(){
@@ -438,7 +447,7 @@
             function events(){
                 for(let i = 0; i < slides.length; i++){
                     slides[i].querySelector('img').addEventListener('dragstart', event => event.preventDefault());
-        
+        /* 
                     // touch
                     slides[i].addEventListener('touchstart', scrollStart, false);
                     slides[i].addEventListener('touchmove', scrollMove, false);
@@ -448,6 +457,14 @@
                     slides[i].addEventListener('mousedown', scrollStart, false);
                     slides[i].addEventListener('mousemove', scrollMove, false);
                     slides[i].addEventListener('mouseup', scrollEnd, false);
+ */
+
+                    slides[i].addEventListener('pointerdown', scrollStart);
+                    slides[i].addEventListener('pointermove', scrollMove);
+                    slides[i].addEventListener('pointerup', scrollEnd);
+                    slides[i].addEventListener('pointercancel', scrollEnd);
+                    slides[i].addEventListener('pointerleave', scrollEnd);
+
                 }
             }
         }

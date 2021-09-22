@@ -204,3 +204,8 @@
 {
     text-decoration: none;
 }
+
+.grabbing
+{
+    cursor: grab;
+}
