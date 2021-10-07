@@ -212,7 +212,7 @@
 
     if(slider !== null){
         // slides includes img and title
-        const slides = slider.querySelectorAll('article');
+        const slides = slider.querySelectorAll('a');
 
         // quantity
         const length = slides.length;
