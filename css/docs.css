@@ -61,3 +61,15 @@
 {
     display: none;
 }
+
+#docs article .card h1 a
+{
+    text-transform: none;
+    display: block;
+    transform: scaleX(1);
+}
+
+#docs article .card h1 a:hover
+{
+    text-decoration: none;
+}
