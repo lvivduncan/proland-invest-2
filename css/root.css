@@ -185,18 +185,7 @@ input[type="number"]
 {
     -moz-appearance: textfield;
 }
-/* 
-main h1,
-main h2,
-main h3,
-main h4
-{
-    font-weight: 500;
-    text-transform: none;
-    font-size: 22px;
-    margin: 0 0 30px;
-}
- */
+
 main p
 {
     margin: 0 0 30px;
@@ -211,4 +200,16 @@ main p:last-child
 main em
 {
     color: var(--gray-dark);
+}
+
+/* 40*, 50* */
+#status
+{
+    padding: 40px 0;
+    text-align: center;
+    height: calc(100vh - 435px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
 }
