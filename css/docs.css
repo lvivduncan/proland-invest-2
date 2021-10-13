@@ -73,3 +73,9 @@
 {
     text-decoration: none;
 }
+
+/* вирівнювання картинки по верху */
+#docs .card picture img
+{
+    object-position: top;
+}
